@@ -1,3 +1,53 @@
-body {
-    background-color: red;
+:root {
+    --background-color: #011638;
+    --card-background-color: #EDE6E3;
 }
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: "Ubuntu", sans-serif;
+}
+
+body {
+    background-color: var(--background-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 1em;
+    margin-bottom: 2em;
+}
+
+.main-container-login {
+    margin: 1em auto;
+    width: 300px;
+    height: 300px;
+    text-align: center;
+    background-color: var(--card-background-color);
+    border-radius: 0.5em;
+    box-shadow:rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;;
+    padding: 2em 0;
+}
+
+.main-container-login h2 {
+    margin-bottom: 1.5em;
+}
+
+.main-container-login form label {
+    display: none;
+}
+
+.main-container-login form input {
+    border: none;
+    border-bottom: 2px solid black;
+}
+
+
