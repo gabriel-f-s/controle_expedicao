@@ -3,13 +3,32 @@
 {% block title %}Home{% endblock title %}
 
 {% block main %}
-<h1>Home</h1>
-{% if user.is_authenticated %}
-    Oi {{ user.username }}!
+<div class="row">
+    <h1>Home</h1>
+    {% if user.is_authenticated %}
+    Seja bem-vindo(a) {{ user.username }}!
+</div>
+<ul>
+    <li>
+        <a href="">
+            Relatório
+        </a>
+    </li>
+    <li>
+        <a href="">
+            Registro
+        </a>
+    </li>
+    <li>
+        <a href="">
+            Banco de Dados
+        </a>
+    </li>
     <form action="{% url 'logout' %}" method="post">
         {% csrf_token %}
-        <button type="submit">Log Out</button>
+        <button type="submit">Sair</button>
     </form>
+</ul>
 {% else %}
     <p>Você não está logado</p>
     <a href="{% url 'login' %}">Log In</a>
