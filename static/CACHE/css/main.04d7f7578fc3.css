@@ -1,0 +1,49 @@
+/* line 3, static/scss/main.scss */
+body {
+  background-image: url("/static/images/global/background.jpg?bd4fd3247dde");
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center; }
+
+/* line 7, static/scss/main.scss */
+h1, h2, h3, h4, h5, h6, button {
+  font-family: "Nunito", serif !important; }
+
+/* line 11, static/scss/main.scss */
+#main-container {
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  padding: 2em;
+  height: 720px;
+  -webkit-box-shadow: -16px 0px 31px -4px rgba(0, 0, 0, 0.35);
+  -moz-box-shadow: -16px 0px 31px -4px rgba(0, 0, 0, 0.35);
+  box-shadow: -16px 0px 31px -4px rgba(0, 0, 0, 0.35); }
+  /* line 20, static/scss/main.scss */
+  #main-container #rows {
+    display: flex;
+    justify-content: center; }
+    /* line 24, static/scss/main.scss */
+    #main-container #rows h1 {
+      font-weight: 700;
+      font-size: 45px;
+      margin-bottom: 1em; }
+    /* line 30, static/scss/main.scss */
+    #main-container #rows .col-buttons {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      gap: 1em; }
+      /* line 36, static/scss/main.scss */
+      #main-container #rows .col-buttons button, #main-container #rows .col-buttons a {
+        background-color: #003366;
+        border: none;
+        font-weight: 700;
+        padding: 1em; }
+      /* line 43, static/scss/main.scss */
+      #main-container #rows .col-buttons button:hover, #main-container #rows .col-buttons a:hover {
+        background-color: #004d99; }
+      /* line 47, static/scss/main.scss */
+      #main-container #rows .col-buttons form button {
+        width: 100%; }

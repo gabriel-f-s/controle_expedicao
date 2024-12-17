@@ -1,0 +1,15 @@
+/* line 3, static/scss/main.scss */
+body {
+  background-image: url("/static/images/global/background.jpg?bd4fd3247dde");
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center; }
+
+/* line 7, static/scss/main.scss */
+.main-container {
+  background-color: #f0f0f0; }
+  /* line 10, static/scss/main.scss */
+  .main-container #rows {
+    display: flex; }

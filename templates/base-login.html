@@ -1,0 +1,17 @@
+{% load static %}
+{% load compress %}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        {% compress css %}
+        <link rel="stylesheet" type="text/x-scss" href="{% static 'scss/login.scss' %}">
+        {% endcompress %}
+        <title>{% block title %}{% endblock title %} | Controle de Expedição</title>
+        {% include "dashboard/partials/head.html" %}
+    </head>
+    <body>
+        {% block main %}
+        {% endblock main %}
+    </body>
+</html>

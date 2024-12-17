@@ -1,0 +1,66 @@
+/* line 3, static/scss/login.scss */
+body {
+  background-image: url("/static/images/global/background.jpg?bd4fd3247dde");
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center; }
+
+/* line 14, static/scss/login.scss */
+h1, h2, h3, h4, h5, h6, button {
+  font-family: "Nunito", serif !important; }
+
+/* line 19, static/scss/login.scss */
+.row {
+  height: 560px; }
+  /* line 22, static/scss/login.scss */
+  .row .image-side {
+    background-image: url("/static/images/global/login.png?c598ce7dd1f6");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    -webkit-box-shadow: -16px 0px 31px -4px rgba(0, 0, 0, 0.35);
+    -moz-box-shadow: -16px 0px 31px -4px rgba(0, 0, 0, 0.35);
+    box-shadow: -16px 0px 31px -4px rgba(0, 0, 0, 0.35); }
+    /* line 33, static/scss/login.scss */
+    .row .image-side #image-login {
+      width: 100%; }
+  /* line 38, static/scss/login.scss */
+  .row .login-side {
+    padding: 1.5em 3em 0 3em;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    -webkit-box-shadow: 16px 0px 31px -4px rgba(0, 0, 0, 0.35);
+    -moz-box-shadow: 16px 0px 31px -4px rgba(0, 0, 0, 0.35);
+    box-shadow: 16px 0px 31px -4px rgba(0, 0, 0, 0.35);
+    background-color: #f0f0f0; }
+    /* line 48, static/scss/login.scss */
+    .row .login-side h2 {
+      font-weight: 700;
+      font-size: 45px;
+      margin-bottom: 1em; }
+    /* line 54, static/scss/login.scss */
+    .row .login-side form {
+      display: flex;
+      flex-direction: column;
+      gap: 1em; }
+      /* line 59, static/scss/login.scss */
+      .row .login-side form input {
+        border: none;
+        font-family: "Montserrat", sans-serif; }
+      /* line 64, static/scss/login.scss */
+      .row .login-side form button {
+        background-color: #003366;
+        border: none;
+        font-weight: 700;
+        padding: 1em; }
+      /* line 72, static/scss/login.scss */
+      .row .login-side form button:hover {
+        background-color: #004d99; }
+      /* line 76, static/scss/login.scss */
+      .row .login-side form a {
+        text-decoration: none;
+        color: #003366; }

@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css %}
+        <link rel="stylesheet" type="text/x-scss" href="{% static 'scss/main.scss' %}">
+{% endblock css %}
+{% block title %}Registro{% endblock title %}
+
+{% block main %}
+        <div class="text-center">
+            <h2 class="mb-3">Registro</h2>
+        </div>
+    </div>
+    <div id="rows"  class="row">
+        <div class="col-5 col-buttons">
+            <a id="button" href="" class="button btn btn-primary">
+                <i class="fa-solid fa-truck-front"></i>
+                Entrada de veículo
+                <div></div>
+            </a>
+            <a id="button" href="" class="button btn btn-primary">
+                <i class="fa-solid fa-truck-ramp-box"></i>
+                Fim do carregamento
+                <div></div>
+            </a>
+        </div>
+        <div class="col-5 col-buttons">
+            <a id="button" href="" class="button btn btn-primary">
+                <i class="fa-solid fa-truck-ramp-box"></i>
+                Início do carregamento
+                <div></div>
+            </a>
+            <a id="button" class="button btn btn-primary" href="{% url "home-page" %}">
+                <i class="fa-solid fa-left-long"></i>
+                Voltar
+                <div></div>
+            </a>
+        </div>
+    </div>
+{% endblock main %}

@@ -1,22 +1,30 @@
 {% load static %}
+{% load compress %}
 
 <!DOCTYPE html>
 <html lang="pt-BR">
     <head>
+        {% compress css %}
+            {% block css %}{% endblock css %}
+        {% endcompress %}
         <title>{% block title %}{% endblock title %} | Controle de Expedição</title>
         {% include "dashboard/partials/head.html" %}
     </head>
     <body>
-        <header class="d-flex flex-row align-items-center">
-            <img src="{% static 'images/global/logo-britvic.png' %}" alt="logo britvic">
-            <div class="container header-container d-flex align-items-center gap-4">
-                <i class="fa-solid fa-truck-front w"></i>
-                <h1>Controle de Expedição</h1>
+        <div class="container">
+            <div id="main-container" class="row">
+                <div id="rows"  class="row">
+                    <div class="heading">
+                        <img src="{% static "images/global/logo-preto.png" %}" alt="">
+                        <div class="d-flex align-items-center justify-content-between gap-4">
+                            <h1>Controle de Expedição</h1>
+                            <i class="fa-solid fa-truck"></i>
+                        </div>
+                        <div></div>
+                    </div>
+                {% block main %}
+                {% endblock main %}
             </div>
-        </header>
-        <div class="container main-container">
-            {% block main %}
-            {% endblock main %}
         </div>
     </body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
