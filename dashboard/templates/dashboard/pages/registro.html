@@ -13,11 +13,11 @@
     </div>
     <div id="rows"  class="row">
         <div class="col-5 col-buttons">
-            <a id="button" href="" class="button btn btn-primary">
+            <button id="button" class="button btn btn-primary" data-bs-target="#form-modal" data-bs-toggle="modal">
                 <i class="fa-solid fa-truck-front"></i>
                 Entrada de veículo
                 <div></div>
-            </a>
+            </button>
             <a id="button" href="" class="button btn btn-primary">
                 <i class="fa-solid fa-truck-ramp-box"></i>
                 Fim do carregamento
@@ -36,5 +36,76 @@
                 <div></div>
             </a>
         </div>
-    </div>
+        {% comment %} Modal de Entrada de Veículos {% endcomment %}
+        <div class="modal fade" id="form-modal" aria-hidden="true" aria-labelledby="form-modal-label" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="form-modal-label">Entrada</h1>
+                </div>
+                <div class="modal-body">
+                  <form action="" method="post">
+                    <div class="mb-2">
+                        <label for="registro" class="form-label">Número do Registro:</label>
+                        <input id="registro" type="text" class="form-control" required="">
+                    </div>
+                    <div class="mb-2">
+                        <label for="data-hora" class="form-label">Data e Hora de entrada:</label>
+                        <input id="data-hora" type="text" class="form-control" required="">
+                    </div>
+                    <div class="mb-2">
+                        <label for="" class="form-label">Tipo do Caminhão:</label>
+                        <select name="" id="" class="form-select" required="">
+                            <option selected>Selecione o tipo do caminhão</option>
+                            <option value="1">Truck - Baú</option>
+                            <option value="2">Truck - Sider</option>
+                            <option value="3">Carreta - Baú</option>                          
+                            <option value="4">Carreta - Sider</option>                          
+                        </select>
+                    </div>
+                    <div class="mb-2">
+                        <label for="placa" class="form-label">Placa:</label>
+                        <input id="placa" type="text" class="form-control" required="">
+                    </div>
+                    <div class="mb-2">
+                        <label for="motorista" class="form-label">Motorista:</label>
+                        <input id="motorista" type="text" class="form-control" required="">
+                    </div>
+                    <fieldset disabled="disabled">
+                        <div class="mb-2">
+                            <label for="usuario" class="form-label">Usuário:</label>
+                            <input id="usuario" type="text" class="form-control" placeholder="{{ user.username }}">
+                        </div>
+                        <div class="mb-2">
+                            <label for="entradac" class="form-label">Lançamento da Entrada:</label>
+                            <input id="entradac" type="text" class="form-control">
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal">Salvar e sair</button>
+                </form>
+                    <button id="logout-button" class="btn btn-primary" data-bs-target="#exit-modal" data-bs-toggle="modal">Sair</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade" id="exit-modal" aria-hidden="true" aria-labelledby="exit-modal-label" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exit-modal-label">Tem certeza que deseja sair?</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  Sair sem salvar fará você perder os dados inseridos no formulário.
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" data-bs-target="#form-modal" data-bs-toggle="modal">Voltar para o formulário</button>
+                    <button id="logout-button" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Sair mesmo assim</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 {% endblock main %}

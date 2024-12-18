@@ -66,6 +66,11 @@ button:hover, #button:hover {
         border: none;
     }
 
+    .modal-body {
+        background-color: $secondary-background-color;
+        border: none;
+    }
+
     .modal-footer {
         background-color: $secondary-background-color;
         border: none;
@@ -88,4 +93,8 @@ button:hover, #button:hover {
             background-color: #9e0a0a !important;
         }
     }
+}
+
+.form-label, select {
+    font-family: $font !important;
 }
