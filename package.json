@@ -3,7 +3,7 @@
     "bootstrap": "^5.3.3",
     "sass": "^1.83.0"
   },
-  "name": "controle_expedicao",
+  "name": "ncu",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -12,5 +12,6 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "devDependencies": {},
   "description": ""
 }

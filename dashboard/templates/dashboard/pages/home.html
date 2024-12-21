@@ -7,7 +7,6 @@
 {% block title %}Home{% endblock title %}
 
 {% block main %}
-    {% if user.is_authenticated %}
             <div class="text-center">
                 <h2>Página principal</h2>
                 <p>
@@ -17,7 +16,7 @@
         </div>
         <div id="rows"  class="row">
             <div class="col-5 col-buttons">
-                <a id="button" href="{% url "relatory-page" %}" class="button btn btn-primary">
+                <a id="button" href="{% url "report-page" %}" class="button btn btn-primary">
                     <i class="fa-solid fa-folder-open"></i>
                     Relatório
                     <div></div>
@@ -50,31 +49,13 @@
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                  <form action="{% url 'logout' %}" method="post">
-                    {% csrf_token %}
-                    <button id="logout-button" type="submit" class="btn btn-primary">
-                        Sair
-                    </button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                        <a id="logout-button" href="{% url "log-out" %}" class="btn btn-primary">
+                            Sair
+                        </a>
                 </form>
                 </div>
               </div>
             </div>
           </div>          
-        {% else %}
-        <div id="rows" class="row">
-            <div class="col-5">
-                <div class="text-center col-buttons">
-                    <h2>
-                        Você não está logado
-                    </h2>
-                    <a id="button" href="{% url 'login' %}" class="btn btn-primary">
-                        <i class="fa-solid fa-user"></i>
-                        Log In
-                        <div></div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    {% endif %}
 {% endblock main %}

@@ -87,10 +87,13 @@ button:hover, #button:hover {
 
         #logout-button {
             background-color: #b40a0a !important;
+            border: none !important;
+            font-weight: 700;
         }
 
         #logout-button:hover {
             background-color: #9e0a0a !important;
+            border: none !important;
         }
     }
 }

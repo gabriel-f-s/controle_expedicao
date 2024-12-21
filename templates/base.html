@@ -22,8 +22,25 @@
                         </div>
                         <div></div>
                     </div>
+            {% if request.user.is_authenticated %}    
                 {% block main %}
                 {% endblock main %}
+            {% else %}
+                    <div id="rows" class="row">
+                        <div class="col-5">
+                            <div class="text-center col-buttons">
+                                <h2>
+                                    Você não está logado
+                                </h2>
+                                <a id="button" href="{% url 'login-page' %}" class="btn btn-primary">
+                                    <i class="fa-solid fa-user"></i>
+                                    Log In
+                                    <div></div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+            {% endif %}
             </div>
         </div>
     </body>

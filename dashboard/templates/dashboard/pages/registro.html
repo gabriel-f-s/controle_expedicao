@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load crispy_forms_tags %}
 
 {% block css %}
         <link rel="stylesheet" type="text/x-scss" href="{% static 'scss/main.scss' %}">
@@ -37,59 +38,37 @@
             </a>
         </div>
         {% comment %} Modal de Entrada de Veículos {% endcomment %}
-        <div class="modal fade" id="form-modal" aria-hidden="true" aria-labelledby="form-modal-label" tabindex="-1">
+        <div class="modal fade modal-lg" id="form-modal" data-bs-backdrop="static" data-bs-keyboard="false" aria-hidden="true" aria-labelledby="form-modal-label" tabindex="-1">
             <div class="modal-dialog modal-dialog-centered">
               <div class="modal-content">
                 <div class="modal-header">
                   <h1 class="modal-title fs-5" id="form-modal-label">Entrada</h1>
                 </div>
                 <div class="modal-body">
-                  <form action="" method="post">
-                    <div class="mb-2">
-                        <label for="registro" class="form-label">Número do Registro:</label>
-                        <input id="registro" type="text" class="form-control" required="">
-                    </div>
-                    <div class="mb-2">
-                        <label for="data-hora" class="form-label">Data e Hora de entrada:</label>
-                        <input id="data-hora" type="text" class="form-control" required="">
-                    </div>
-                    <div class="mb-2">
-                        <label for="" class="form-label">Tipo do Caminhão:</label>
-                        <select name="" id="" class="form-select" required="">
-                            <option selected>Selecione o tipo do caminhão</option>
-                            <option value="1">Truck - Baú</option>
-                            <option value="2">Truck - Sider</option>
-                            <option value="3">Carreta - Baú</option>                          
-                            <option value="4">Carreta - Sider</option>                          
-                        </select>
-                    </div>
-                    <div class="mb-2">
-                        <label for="placa" class="form-label">Placa:</label>
-                        <input id="placa" type="text" class="form-control" required="">
-                    </div>
-                    <div class="mb-2">
-                        <label for="motorista" class="form-label">Motorista:</label>
-                        <input id="motorista" type="text" class="form-control" required="">
-                    </div>
-                    <fieldset disabled="disabled">
-                        <div class="mb-2">
-                            <label for="usuario" class="form-label">Usuário:</label>
-                            <input id="usuario" type="text" class="form-control" placeholder="{{ user.username }}">
-                        </div>
-                        <div class="mb-2">
-                            <label for="entradac" class="form-label">Lançamento da Entrada:</label>
-                            <input id="entradac" type="text" class="form-control">
-                        </div>
-                    </fieldset>
-                </div>
-                <div class="modal-footer">
-                    <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal">Salvar e sair</button>
-                </form>
+                  <form id="form_veiculos" action="." method="post">
+                    {% csrf_token %}
+                    {{ form|crispy}}
+                    <div class="invalid-feedback">
+                      Please select a valid state.
+                    </div>                
+                    <div class="modal-footer">
+                      <button id="save-button" type="submit" class="btn btn-secondary">Salvar e sair</button>
+                    </form>
                     <button id="logout-button" class="btn btn-primary" data-bs-target="#exit-modal" data-bs-toggle="modal">Sair</button>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+          <script>
+            var value = $("#initial-id_data_lancamento").attr("value");
+            $(function() {
+              $("#id_data_lancamento")
+              .attr("readonly", "")
+              .attr("value", value)
+            });
+
+          </script>
           <div class="modal fade" id="exit-modal" aria-hidden="true" aria-labelledby="exit-modal-label" tabindex="-1">
             <div class="modal-dialog modal-dialog-centered">
               <div class="modal-content">

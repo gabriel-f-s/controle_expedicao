@@ -1,8 +1,0 @@
-/* line 3, static/scss/main.scss */
-body {
-  background-image: url("/static/images/global/background.jpg?bd4fd3247dde");
-  font-family: "Montserrat", sans-serif;
-  display: flex;
-  height: 100vh;
-  justify-content: center;
-  align-items: center; }

@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css %}
+        <link rel="stylesheet" type="text/x-scss" href="{% static 'scss/main.scss' %}">
+{% endblock css %}
+{% block title %}Relatório{% endblock title %}
+
+{% block main %}
+        <div class="text-center">
+            <h2 class="mb-3">Veículos a Expedir</h2>
+        </div>
+    </div>
+    <div id="rows" class="row">
+        <div class="row d-flex justify-content-center align-items-start">
+            <div class="col-2">
+                <a id="button" class="button btn btn-primary btn-sm" href="{% url "report-page" %}">
+                    <i class="fa-solid fa-left-long"></i>
+                    Voltar
+                    <div></div>
+                </a>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Registro N°</th>
+                        <th scope="col">Data e hora de Entrada</th>
+                        <th scope="col">Usuário</th>
+                        <th scope="col">Placa</th>
+                        <th scope="col">Motorista</th>
+                        <th scope="col">Expedido</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in object_list %}
+                        <tr>
+                            <td>{{ item.numero_do_registro }}</td>
+                            <td>{{ item.data_entrada }}</td>
+                            <td>{{ item.usuario }}</td>
+                            <td>{{ item.placa }}</td>
+                            <td>{{ item.nome_motorista }}</td>
+                            <td> <input type="checkbox" name="{{ item.expedido }}"> </td>
+                        </tr>
+                    {% empty %}
+                        <tr>
+                            <td class="colspan-6">Nenhum campo registrado.</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+                <tfoot>
+                    
+                </tfoot>
+            </table>
+        </div>
+    </div>
+{% endblock  %}

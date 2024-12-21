@@ -10,12 +10,17 @@
         <div class="text-center">
             <h2 class="mb-3">Relatório</h2>
         </div>
+        {% if message %}
+            <div class="alert {{class}}">
+                {{message}}
+            </div>
+        {% endif %}
     </div>
     <div id="rows"  class="row">
         <div class="col-5 col-buttons">
-            <a id="button" href="" class="button btn btn-primary">
+            <a id="button" href="{% url "list-report-page" %}" class="button btn btn-primary">
                 <i class="fa-solid fa-truck-ramp-box"></i>
-                Veículo a expedir
+                Veículos a expedir
                 <div></div>
             </a>
             <a id="button" href="" class="button btn btn-primary">

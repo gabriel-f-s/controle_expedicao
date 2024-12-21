@@ -1,0 +1,37 @@
+{% extends "base-login.html" %}
+{% load static %}
+
+{% block title %}Login{% endblock title %}
+
+{% block main %}
+<div class="container">
+    <div class="container-fluid">
+        <div class="row d-flex justify-content-center mb-5">
+            <div class="col-6 image-side"></div>
+            <div class="col-4 login-side">
+                <h2>
+                    Controle de Expedição
+                </h2>
+                <hr>
+                <p>Faça o seu login:</p>
+                <form method="post" action="{% url "do-login" %}">
+                    {% if message %}
+                        <div class="alert {{class}}">
+                            {{message}}
+                        </div>
+                    {% endif %}
+                    {% csrf_token %} 
+                    <input class="form-control" type="text" name="username" autofocus="" autocapitalize="none" autocomplete="username" maxlength="150" required="" placeholder="E-mail">
+                    <input class="form-control" type="password" name="password" autocomplete="current-password" required="" placeholder="Senha">
+                    <button type="submit" class="button btn btn-primary">
+                        Acessar
+                    </button>
+                </form>
+                <div class="text-center mt-4">
+                    <a href="">Esqueci minha senha</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock main %}
